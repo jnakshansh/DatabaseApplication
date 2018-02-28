@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<DialogPane xmlns:fx="http://javafx.com/fxml/1" fx:id="deleteRecord" xmlns="http://javafx.com/javafx/8.0.121"
+            fx:controller="Jnakshansh.DeleteRecord">
+    <headerText>
+        Fill in the Student Details
+    </headerText>
+    <content>
+        <GridPane hgap="10" style="-fx-background-color: #C8E6C9" vgap="10">
+            <Label text="Enrollment_no" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="enrollment_no" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Button fx:id="search_button" onAction="#onButtonClicked" text="Search" textAlignment="JUSTIFY"
+                    GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <Label fx:id="search_label" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <CheckBox fx:id="deleteAll" text="Delete All Records" GridPane.rowIndex="2"/>
+            <CheckBox fx:id="check" onAction="#confirm" text="I agree to delete this Record" GridPane.rowIndex="3"/>
+            <columnConstraints>
+                <ColumnConstraints/>
+                <ColumnConstraints/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+            </rowConstraints>
+        </GridPane>
+    </content>
+</DialogPane>

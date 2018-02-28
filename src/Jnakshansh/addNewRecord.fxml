@@ -1,0 +1,20 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<DialogPane xmlns:fx="http://javafx.com/fxml" fx:id="addNewRecord"
+            fx:controller="Jnakshansh.NewRecord">
+    <headerText>
+        Fill details of the Student
+    </headerText>
+    <content>
+        <GridPane vgap="10" hgap="10" style="-fx-background-color: #C8E6C9">
+            <Label text="Enrollment_No:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="enrollment_no" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField promptText="First name first" fx:id="student_name" GridPane.rowIndex="1"
+                       GridPane.columnIndex="1"/>
+            <Label text="CGPA:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField promptText="CGPA out of 10" fx:id="cgpa" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <CheckBox fx:id="check" text="I agree to add this Record" GridPane.rowIndex="3" onAction="#confirm"/>
+        </GridPane>
+    </content>
+</DialogPane>

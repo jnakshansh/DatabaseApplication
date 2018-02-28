@@ -1,0 +1,67 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:id="mainBorderPane" fx:controller="Jnakshansh.MainFile"
+            style="-fx-background-color: #E8F5E9">
+    <top>
+        <MenuBar style="-fx-background-color: #C8E6C9; -fx-effect: dropshadow( gaussian , #388E3C , 10,0,0,1 );">
+
+            <Menu text="Add Record" style="-fx-background-color: #66BB6A">
+                <items>
+                    <MenuItem fx:id="addNewRecord" text="Add" onAction="#addNewDialog"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem fx:id="addBatchRecord" text="Add a File" onAction="#addNewDialog"/>
+                    <SeparatorMenuItem/>
+                </items>
+            </Menu>
+
+            <Menu text="Edit" style="-fx-background-color: #66BB6A">
+                <items>
+                    <MenuItem fx:id="updateRecord" text="Update" onAction="#addNewDialog"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem fx:id="deleteRecord" text="Delete" onAction="#addNewDialog"/>
+                    <SeparatorMenuItem/>
+                </items>
+            </Menu>
+            <Menu text="Exit" style="-fx-background-color: #66BB6A">
+                <items>
+                    <MenuItem fx:id="exit" onAction="#addNewDialog" text="Exit"/>
+                </items>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <GridPane alignment="CENTER">
+            <Label fx:id="welcomeLabel" GridPane.halignment="CENTER" underline="true"
+                   text="Walchand Institute of Technology, Solapur"
+                   style="-fx-font-family: Rockwell;-fx-font-size: 40; " GridPane.rowIndex="0"/>
+            <Label fx:id="welcomeLabel1" GridPane.halignment="CENTER" underline="true" text="Student's Database"
+                   style="-fx-font-family: Rockwell;-fx-font-size: 25;" GridPane.rowIndex="1"/>
+        </GridPane>
+    </center>
+    <fx:define>
+        <ToggleGroup fx:id="searchToggleGroup"/>
+    </fx:define>
+    <bottom>
+        <GridPane GridPane.halignment="CENTER" alignment="CENTER" GridPane.hgrow="ALWAYS" prefHeight="500">
+            <HBox fx:id="hbox" GridPane.rowIndex="0" style="-fx-padding: 0 0 30 0" GridPane.hgrow="ALWAYS"
+                  prefHeight="50" maxWidth="900" alignment="CENTER" spacing="40">
+                <Button text="Show All Records" onAction="#showTable"
+                        style="-fx-background-color:#66BB6A;-fx-effect: dropshadow( gaussian , #388E3C , 10,0,0,1 );"/>
+                <VBox GridPane.columnIndex="0" prefWidth="150" spacing="5">
+                    <Label fx:id="search_text" text="Search"/>
+                    <RadioButton fx:id="by_id" text="By Enrollment-Id" toggleGroup="$searchToggleGroup"/>
+                    <RadioButton fx:id="by_name" text="By Name" toggleGroup="$searchToggleGroup" selected="true"/>
+                </VBox>
+                <TextField fx:id="search_keyword" promptText="Enrollment_Id or Name" onKeyReleased="#onTextField"/>
+                <Button fx:id="search_button" text="Search" onAction="#searchRecord"
+                        style="-fx-background-color:#66BB6A;-fx-effect: dropshadow( gaussian , #388E3C , 10,0,0,1 );"/>
+                <Label fx:id="search_Label"/>
+            </HBox>
+            <VBox GridPane.rowIndex="1" GridPane.hgrow="ALWAYS" alignment="CENTER">
+                <TableView fx:id="tableView" GridPane.rowIndex="1" prefWidth="500" GridPane.hgrow="ALWAYS"
+                           maxWidth="800" GridPane.halignment="CENTER" maxHeight="250"/>
+            </VBox>
+        </GridPane>
+    </bottom>
+</BorderPane>
